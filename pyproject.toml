@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cech-umap"
+version = "0.1.0"
+description = "Code for ČechUMAP as used in the paper 'a probabilistic perspective on fuzzy simplicial sets for geometric data analysis' (core algorithm + data/evaluation for experiments)."
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+  { name = "Janis Keck" }
+]
+
+# --- CORE DEPENDENCIES ---
+dependencies = [
+  "numpy",
+  "scipy",
+  "torch",
+]
+
+[project.optional-dependencies]
+experiments = [
+  "scikit-learn",
+  "torchvision",
+  "umap-learn",
+  "matplotlib",
+  "pandas",
+  "anndata",
+  "scanpy",
+  "Pillow",
+  "ripser",
+  "persim",
+
+  # knn / graph backends
+  "pynndescent",
+  "faiss-cpu",
+
+  # Louvain clustering ecosystem (used via scanpy or directly)
+  "python-igraph",
+  "louvain",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

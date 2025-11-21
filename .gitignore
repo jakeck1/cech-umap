@@ -1,0 +1,39 @@
+# Python cache / build / venv
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env/
+venv/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data, results, checkpoints
+data/*
+!data/README.md
+results/*
+!results/README.md
+embeddings/*
+!embeddings/README.md
+merged_results/*
+!merged_results/README.md
+
+# Logs (SLURM + others)
+slurm_logs/
+runs/
+*.out
+*.err
+
+# OS
+.DS_Store
+Thumbs.db
+
+# WandB logs
+wandb/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
