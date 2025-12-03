@@ -1,7 +1,7 @@
 # ČechUMAP: Embeddings based on matching marginal probabilities of sampled Čech filtrations
 
 
-This repository contains the ČechUMAP algorithm and experiments performed with it as specified in the paper 'A probabilistic perspective on fuzzy simplicial sets for geometric data analysis.'
+This repository contains the ČechUMAP algorithm and experiments performed with it as specified in the paper 'Probabilistic Foundations of Fuzzy Simplicial Sets for Nonlinear Dimensionality Reduction'
 
 
 In brief, the algorithm is based on the idea that UMAP may be interpreted as matching marginal probabilities of sampled Vietoris-Rips-Filtrations in embeddings and data space. 
@@ -19,6 +19,21 @@ from cech_umap.cumap import CechUMAP
 cumap = CechUMAP()
 embeddings = cumap.fit_transform(data)
 ```
+
+See also minimal_example.ipynb for a quick demo.
+
+## Hyperparameters
+A non-exhaustive list of hyperparameters of the algorithm that you may want to play around with are listed below.
+
+| Hyperparameter | Default Value | Range/Type | Description |
+| :--- | :---: | :--- | :--- |
+| **`n_neighbors`** | `10` | `Integer` | Number of neighbors to use for triplet sampling of close neighbors. |
+| **`n_components`** | `2` | `Integer` | Output dimension. |
+| **`init`** | `pca` | `String(pca,spectral,random)` | Initialization via PCA, LE or random. We recommend PCA. |
+| **`low_dim_cech`** | `euclidean` | `String(euclidean,discrete)` | Whether to use the distances in the ambient (euclidean) space for computing the cech filtration for the triplet weights or only using data-distances (discrete). Latter is more costly with higher n_neighbors.  |
+| **`negative_rate_triplets`** | `1` | `Integer` | How many negative triplets are sampled per positive triplets |
+| **`proportion_uniform_triplets`** | `0.5` | `Float (0.0 to 1.0)` | Proportion of negative triplets that are sampled uniformly (the rest are sampled 'semi-locally', i.e. two points are nearest neighbors and the third one is not) |
+| **`use_triplet_weight_in_ce_loss`** | `False` | `Boolean` | Controls whether in the negative triplet part of the CE loss, weights in the high dimensional space are used or not (latter is mimicking UMAP and is default.) |
 
 
 # Installation
