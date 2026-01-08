@@ -1,7 +1,7 @@
 # ČechUMAP: Embeddings based on matching marginal probabilities of sampled Čech filtrations
 
 
-This repository contains the ČechUMAP algorithm and experiments performed with it as specified in the paper 'Probabilistic Foundations of Fuzzy Simplicial Sets for Nonlinear Dimensionality Reduction'
+This repository contains the ČechUMAP algorithm and experiments performed with it as specified in the paper 'Probabilistic Foundations of Fuzzy Simplicial Sets for Nonlinear Dimensionality Reduction' (https://doi.org/10.48550/arXiv.2512.03899)
 
 
 In brief, the algorithm is based on the idea that UMAP may be interpreted as matching marginal probabilities of sampled Vietoris-Rips-Filtrations in embeddings and data space. 
@@ -110,5 +110,19 @@ python evaluate_embeddings.py --dataset ... --neighbors ... --seed ...
 
 
 # Citation
+
+If you use this code in your research, please cite the corresponding preprint: 
+
+**APA** 
+Keck, J., Barth, L. S., Joharinad, P., & Jost, J. (2025). Probabilistic Foundations of Fuzzy Simplicial Sets for Nonlinear Dimensionality Reduction. arXiv preprint arXiv:2512.03899.
+
+**BibTex**
+@article{keck2025probabilistic,
+  title={Probabilistic Foundations of Fuzzy Simplicial Sets for Nonlinear Dimensionality Reduction},
+  author={Keck, Janis and Barth, Lukas Silvester and Joharinad, Parvaneh and Jost, J{\"u}rgen and others},
+  journal={arXiv preprint arXiv:2512.03899},
+  year={2025}
+}
+
 
 
